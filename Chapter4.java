@@ -19,7 +19,7 @@ package chapter4;
  *      4.1* default constructor
  *      4.2* overloading 
  *(5)Order of initialization 
- *      //in class Chapter4_3
+ *      //in other java file (same chapter4 package)
  *(6)Encapsulation //class Dragon follows JavaBean
  *      6.1* motivation/purpose
  *      6.2* JavaBeans naming convention
@@ -33,10 +33,9 @@ public class Chapter4 {
     private static int d=44;
     
     public static void main1(String... args) throws Exception { //throws clause is required because a.A() requires it
-        // TODO code application logic here
         Chapter4 a = new Chapter4();
 
-        a.A(); //nonstatic method members require an instance of the class to execute
+        a.A(); //nonstatic method members require an instance to execute
 
         System.out.println(a.B());
 

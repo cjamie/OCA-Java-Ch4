@@ -22,7 +22,7 @@ class A {
 
 
 class A_1 {    
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         A init = new A(); //this alone prints out 4 elements
     }
 }
@@ -40,8 +40,8 @@ Order of Initialization
     //implementation for the constructor is on line 18 19 20 and outputs: constructor\n
 */
 
-//Another example: page 203 of OCA book
-public class B {
+//taken from page 203 of OCA book
+class B {
     private String name = "Torchie";
     { System.out.println(name); }
     private static int COUNT = 0;
@@ -51,8 +51,36 @@ public class B {
         System.out.println("constructor");
     }
     
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         System.out.println("read to construct");
         new B();
     }
+}
+
+/*
+1) Super Class 
+    //there is no super class in this case
+2) static variable declarations and initializers (in order they appear)
+    //statics are on line 47 48 54
+    //output: 0\nread to construct
+3) instance variable declarations and initializers (in order they appear)
+    //instances are on line 45 46 49
+    //output: Torchie\n1
+    //NOTE: this part will not run if no instance (via new operator)
+4) the constructor 
+    //constructor is on line 50 51 52
+    //output: constructor
+*/
+
+
+//relatively 'hard' example taken from page 204 of OCA book
+public class C{
+    static { add(2); }
+    static void add(int num) { System.out.print(num + " "); }
+    C() { add(5); }
+    static { add(4); }
+    { add(6); }
+    static { new C(); }
+    { add(8); }
+    public static void main(String[] args) { } 
 }
