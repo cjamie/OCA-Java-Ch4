@@ -25,6 +25,8 @@ package chapter4;
  *      6.2* JavaBeans naming convention
  *      6.3* Immutability
  *(7) Lambdas
+ *      7.1* 
+ * 
  */
 public class Chapter4 {
     public static int a=11;
@@ -242,9 +244,6 @@ class Dragon{
     }
     public boolean isHungry(){
         return this.hungry;
-    }
-    public String toString(){
-        return name;
     }
     //mutator methods
     public void setNumHeads(int p0){

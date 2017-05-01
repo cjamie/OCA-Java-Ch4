@@ -82,5 +82,22 @@ public class C{
     { add(6); }
     static { new C(); }
     { add(8); }
-    public static void main(String[] args) { } 
+    public static void main1(String[] args){}
 }
+
+/*
+1) Super Class 
+    //there is no super class in this case
+2) static variable declarations and initializers (in order they appear)
+    statics are on line 78 81 83 85
+    //output: 2 4 
+3) instance variable declarations and initializers (in order they appear)
+    //instances are on line 82 84 
+    //output: 6 8 
+    //NOTE: this part will not run if no instance (no new operator)
+4) the constructor 
+    //constructor is on line 80
+    //output: 5
+
+    //total output: 2 4 6 8 5
+*/
